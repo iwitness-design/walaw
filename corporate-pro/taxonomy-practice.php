@@ -3,7 +3,9 @@
 function iwd_tax_practice() {
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
-	echo $term->description . '<br>';
+	echo '<div class="walaw-practice-description">';
+	echo $term->description;
+	echo '</div>';
 }
 
 //remove_action( 'genesis_entry_content', 'genesis_do_post_content' );

@@ -25,6 +25,7 @@ remove_action( 'genesis_after_header', 'corporate_hero_section_open', 20 );
 remove_action( 'genesis_after_header', 'corporate_hero_section_title', 24 );
 remove_action( 'genesis_after_header', 'corporate_hero_section_close', 28 );
 
+
 // Get site-header.
 get_header();
 

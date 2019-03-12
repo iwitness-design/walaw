@@ -4955,4 +4955,8 @@ ul.testimonials-list h5 {
 	}
 }
 
+.home .content .entry {
+	width: 100% !important;
+}
+
 /*# sourceMappingURL=style.css.map */
