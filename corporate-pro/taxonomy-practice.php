@@ -21,6 +21,16 @@ function iwd_tax_practice() {
 	echo '<div class="walaw-practice-description">';
 	echo $term->description;
 	echo '</div>';
+
+	$pods = pods( 'practice', $term->term_id );
+
+	if ( ! empty( $pods->display( 'button-label' ) ) ) {
+		echo '<div class="walaw-practice-button">';
+		echo '<div class="wp-block-button">';
+		echo '<a href="' . esc_url( $pods->display( 'button-link' ) ) . '" class="wp-block-button__link">' . $pods->display( 'button-label' ) . '</a>';
+		echo '</div>';
+		echo '</div>';
+	}
 }
 
 //remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
