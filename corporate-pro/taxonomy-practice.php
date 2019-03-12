@@ -1,5 +1,20 @@
 <?php
 
+function iwd_change_hero_image_practice() {
+	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+
+	$pods = pods( 'practice', $term->term_id );
+
+	if ( $pods->field( 'banner-image' ) ) {
+		//echo '<img src="' . $pods->display( 'banner-image', true ) . '">';
+
+		echo '<style type="text/css">';
+		echo '.hero-section { background-image: url( ' . $pods->display( 'banner-image', true ) . '); }';
+		echo '</style>';
+	}
+}
+add_action( 'genesis_header', 'iwd_change_hero_image_practice' );
+
 function iwd_tax_practice() {
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 

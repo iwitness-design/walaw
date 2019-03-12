@@ -3,8 +3,6 @@
 function iwd_change_hero_image() {
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
-	echo $term->description . '<br>';
-
 	$pods = pods( 'region', $term->term_id );
 
 	if ( $pods->field( 'banner-image' ) ) {
