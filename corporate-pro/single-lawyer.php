@@ -2,6 +2,7 @@
 
 //remove_action( 'corporate_hero_section', 'genesis_do_breadcrumbs', 9999 );
 //add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 function iwd_single_lawyer() {
 	//the_content();
