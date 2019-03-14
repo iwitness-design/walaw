@@ -278,3 +278,30 @@ require_once CHILD_THEME_DIR . '/includes/defaults.php';
 
 // Load recommended plugins.
 require_once CHILD_THEME_DIR . '/includes/plugins.php';
+
+
+// CUSTOM
+function iwd_practice_shortcode() {
+
+	$args = array(
+		'echo' => false,
+		'taxonomy' => 'practice',
+		'hide_empty' => false,
+	);
+
+	$tax_list = get_categories( $args );
+
+	$html = '';
+
+	$html .= '<div class="walaw-practice-grid">';
+	foreach ( $tax_list as $item ) {
+		$html .= '<div class="walaw-practice-grid__item">';
+		$html .= '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $item->term_id ) . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		$html .= '</div>';
+	}
+
+	 $html .= '</div>';
+
+	return $html;
+}
+add_shortcode( 'practice_list', 'iwd_practice_shortcode' );
