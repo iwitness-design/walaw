@@ -31,6 +31,28 @@ function iwd_single_lawyer() {
 			</div>
 			<div class="walaw-right">
 
+				<?php if ( $pods->field( 'contact-email' ) || $pods->field( 'contact-phone' ) ) { ?>
+					<div>
+						<strong>Contact</strong>
+						<?php
+							if ( $pods->field( 'contact-phone' ) ) {
+								echo '<p>' . $pods->display( 'contact-phone', true ) . '</p>';
+							}
+
+							if ( $pods->field( 'contact-email' ) ) {
+								echo '<p>' . $pods->display( 'contact-email', true ) . '</p>';
+							}
+						?>
+					</div>
+				<?php } ?>
+
+				<?php if ( $pods->field( 'practice-areas' ) ) { ?>
+					<div>
+						<strong>Practice Areas</strong>
+						<?php echo $pods->display( 'practice-areas', true ); ?>
+					</div>
+				<?php } ?>
+
 				<?php if ( $pods->field( 'education' ) ) { ?>
 					<div>
 						<strong>Education</strong>
@@ -38,10 +60,10 @@ function iwd_single_lawyer() {
 					</div>
 				<?php } ?>
 
-				<?php if ( $pods->field( 'professional-activities' ) ) { ?>
+				<?php if ( $pods->field( 'professional-involvement' ) ) { ?>
 					<div>
-						<strong>Professional Activities</strong>
-						<?php echo $pods->display( 'professional-activities', true ); ?>
+						<strong>Professional Involvement</strong>
+						<?php echo $pods->display( 'professional-involvement', true ); ?>
 					</div>
 				<?php } ?>
 			</div>
