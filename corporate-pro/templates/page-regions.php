@@ -24,7 +24,9 @@ function iwd_region_page() {
 
 	echo '<div class="walaw-region-list">';
 	foreach ( $terms as $term ) {
-		echo '<p><a href="' . esc_url( get_term_link( $term ) ) . '">' . $term->name . '</a></p>';
+		if ( $term->parent != 0 ) {
+			echo '<p><a href="' . esc_url( get_term_link( $term ) ) . '">' . $term->name . '</a></p>';
+		}
 	}
 	echo '</div>';
 }
