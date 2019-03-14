@@ -4999,3 +4999,8 @@ ul.testimonials-list h5 {
 .walaw-practice-grid__link:hover {
 	color: #fff;
 }
+
+.walaw-single-lawyer {
+	display: flex;
+	justify-content: space-around;
+}
