@@ -15,25 +15,31 @@ function iwd_change_hero_image() {
 }
 add_action( 'genesis_header', 'iwd_change_hero_image' );
 
-/*function iwd_tax_region() {
+function iwd_tax_region() {
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
-	echo $term->description . '<br>';
-
-	$params = array(
-		'limit'   => -1  // Return all rows
+	$args = array(
+		'echo' => false,
+		'taxonomy' => 'practice',
+		'hide_empty' => false,
 	);
 
-	$pods = pods( 'region', $params );
+	$tax_list = get_categories( $args );
 
-	if ( $pods->field( 'banner-image' ) ) {
-		echo '<img src="' . $pods->display( 'banner-image', true ) . '">';
+	//echo '<pre>' . print_r( $tax_list, true ) . '</pre>';
+
+	echo '<div class="walaw-practice-grid">';
+	foreach ( $tax_list as $item ) {
+		echo '<div class="walaw-practice-grid__item">';
+		echo '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $item->term_id ) . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		echo '</div>';
 	}
+	echo '</div>';
 }
 
 //remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 //remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 remove_action( 'genesis_loop', 'genesis_do_loop' );
-add_action( 'genesis_loop', 'iwd_tax_region' );*/
+add_action( 'genesis_loop', 'iwd_tax_region' );
 
 genesis();
