@@ -4970,11 +4970,12 @@ ul.testimonials-list h5 {
 }
 
 .walaw-practice-grid__item {
-	flex: 1 0 30%;
+	/*flex: 1 0 30%;*/
 	box-sizing: border-box;
 	border: 1px solid #000;
 	margin: 1%;
 	background: #000;
+	width: 30%;
 }
 
 .walaw-practice-grid__item:hover {
