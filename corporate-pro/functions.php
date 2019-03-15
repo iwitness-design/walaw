@@ -305,3 +305,12 @@ function iwd_practice_shortcode() {
 	return $html;
 }
 add_shortcode( 'practice_list', 'iwd_practice_shortcode' );
+
+function iwd_populate_referral_url( $form ){
+	// Grab URL from HTTP Server Var and put it into a variable
+	$refurl = $_SERVER['REQUEST_URI'];
+
+	// Return that value to the form
+	return esc_url_raw($refurl);
+}
+add_filter( 'gform_field_value_refurl', 'iwd_populate_referral_url');
