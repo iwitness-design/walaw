@@ -12,7 +12,7 @@ function iwd_change_add_skyscraper() {
 		//echo '<img src="' . $pods->display( 'banner-image', true ) . '">';
 
 		echo '<style type="text/css">';
-		echo 'body { background-image: url( ' . $thumbnail . '); background-position: top right; background-repeat: no-repeat; background-size: cover; }';
+		echo '@media (min-width: 768px) { body { background-image: url( ' . $thumbnail . '); background-position: top right; background-repeat: no-repeat; background-size: cover; } }';
 		echo '</style>';
 	}
 }

@@ -5036,3 +5036,9 @@ ul.testimonials-list h5 {
 		margin: 0 auto 0;
 	}
 }
+
+@media (max-width: 768px) {
+	.walaw-single-lawyer .walaw-left {
+		width: 100%;
+	}
+}
