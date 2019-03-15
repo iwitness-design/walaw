@@ -5052,3 +5052,11 @@ ul.testimonials-list h5 {
 .tax-practice .walaw-client-request {
 	width: 100%;
 }
+
+.walaw-lawyer-thumb {
+	max-width: 20%;
+}
+
+.walaw-lawyer-thumb .lawyer-name {
+	text-align: center;
+}

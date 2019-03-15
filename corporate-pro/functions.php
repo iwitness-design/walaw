@@ -314,3 +314,10 @@ function iwd_populate_referral_url( $form ){
 	return esc_url_raw($refurl);
 }
 add_filter( 'gform_field_value_refurl', 'iwd_populate_referral_url');
+
+function iwd_tax_rewrite() {
+	add_rewrite_rule( '^region/([^/]*)/([^/]*)/?$', 'index.php?region=$matches[1]&practice=$matches[2]', 'top' );
+
+	//add_rewrite_rule( '^c/(.+?)/(.+?)/?', 'index.php?region=$matches[1]&practice=$matches[2]', 'top' );
+}
+add_action( 'init', 'iwd_tax_rewrite' );

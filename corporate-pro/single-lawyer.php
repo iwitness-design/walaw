@@ -6,13 +6,21 @@ function iwd_change_add_skyscraper() {
 
 	global $post;
 
-	$thumbnail = get_the_post_thumbnail_url( $post->ID );
+	//$thumbnail = get_the_post_thumbnail_url( $post->ID );
 
-	if ( ! empty( $thumbnail ) ) {
+	$params = array(
+		'limit'   => -1  // Return all rows
+	);
+
+	$pods = pods( 'lawyer', $params );
+
+	$skyscraper = $pods->display( 'skyscraper-image' );
+
+	if ( ! empty( $skyscraper ) ) {
 		//echo '<img src="' . $pods->display( 'banner-image', true ) . '">';
 
 		echo '<style type="text/css">';
-		echo '@media (min-width: 768px) { body { background-image: url( ' . $thumbnail . '); background-position: top right; background-repeat: no-repeat; background-size: cover; } }';
+		echo '@media (min-width: 768px) { body { background-image: url( ' . $skyscraper . '); background-position: top right; background-repeat: no-repeat; background-size: cover; } }';
 		echo '</style>';
 	}
 }

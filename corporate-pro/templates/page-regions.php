@@ -16,11 +16,9 @@ function iwd_region_page() {
 
 	echo '<div class="walaw-practice-grid">';
 	foreach ( $terms as $term ) {
-		if ( $term->parent != 0 ) {
 			echo '<div class="walaw-practice-grid__item">';
 			echo '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $term->term_id ) . '" class="walaw-practice-grid__link">' . $term->name . '</a></h3>';
 			echo '</div>';
-		}
 	}
 	echo '</div>';
 }

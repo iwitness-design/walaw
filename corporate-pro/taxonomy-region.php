@@ -28,16 +28,22 @@ function iwd_tax_region() {
 
 	//echo '<pre>' . print_r( $tax_list, true ) . '</pre>';
 
+	//global $post;
+
+	$region = $term->slug;
+
 	echo '<div>';
 	echo '<p>If you don\'t see your region below, reach out to us on our <a href="/contact">contact page</a>.';
 
 	echo '<div class="walaw-practice-grid">';
 	foreach ( $tax_list as $item ) {
 		echo '<div class="walaw-practice-grid__item">';
-		echo '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $item->term_id ) . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		//echo '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $item->term_id ) . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		echo '<h3 class="walaw-practice-grid__heading"><a href="/region/' . $region . '/' . $item->slug . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
 		echo '</div>';
 	}
 	echo '</div>';
+
 }
 
 //remove_action( 'genesis_entry_content', 'genesis_do_post_content' );

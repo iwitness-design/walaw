@@ -33,6 +33,19 @@ function iwd_tax_practice() {
 	echo '<div class="walaw-client-request">';
 	echo do_shortcode( '[gravityform id="2"]' );
 	echo '</div>';
+
+	echo '<div>';
+	echo '<h3>Lawyers</h3>';
+
+	$justin = get_post( 53 );
+
+	if ( $justin ) {
+		echo '<div class="walaw-lawyer-thumb">';
+		echo '<p><a href="' . get_permalink( $justin->ID ) . '"><img src="' . get_the_post_thumbnail_url( $justin->ID ) . '"></a></p>';
+		echo '<p class="lawyer-name"><a href="' . get_permalink( $justin->ID ) . '">' . $justin->post_title . '</a></p>';
+		echo '</div>';
+	}
+	echo '</div>';
 }
 
 //remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
