@@ -1,7 +1,9 @@
 <?php
 
-//remove_action( 'corporate_hero_section', 'genesis_do_breadcrumbs', 9999 );
-//add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+remove_action( 'genesis_after_header', 'corporate_hero_section_open', 20 );
+remove_action( 'genesis_after_header', 'corporate_hero_section_title', 24 );
+remove_action( 'genesis_after_header', 'corporate_hero_section_close', 28 );
+
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 function iwd_single_lawyer() {
@@ -79,11 +81,6 @@ remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 )
 
 
 function iwd_remove_post_meta($post_meta) {
-	/*if ( !is_page() ) {
-		$post_meta = '[post_categories before="Filed Under: "] [post_tags before="Tagged: "]';
-		return $post_meta;
-	}*/
-
 	return '';
 }
 add_filter( 'genesis_post_meta', 'iwd_remove_post_meta' );

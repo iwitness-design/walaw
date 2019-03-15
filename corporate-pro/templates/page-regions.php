@@ -8,24 +8,18 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// Force full width content layout.
-//add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
-
-// Remove default hero section.
-//remove_action( 'genesis_before_content_sidebar_wrap', 'corporate_hero_section' );
-
 function iwd_region_page() {
 	$terms = get_terms( array(
 		'taxonomy'   => 'region',
 		'hide_empty' => false,
 	) );
 
-	//echo '<pre>' . print_r( $terms, true ) . '</pre>';
-
-	echo '<div class="walaw-region-list">';
+	echo '<div class="walaw-practice-grid">';
 	foreach ( $terms as $term ) {
 		if ( $term->parent != 0 ) {
-			echo '<p><a href="' . esc_url( get_term_link( $term ) ) . '">' . $term->name . '</a></p>';
+			echo '<div class="walaw-practice-grid__item">';
+			echo '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $term->term_id ) . '" class="walaw-practice-grid__link">' . $term->name . '</a></h3>';
+			echo '</div>';
 		}
 	}
 	echo '</div>';

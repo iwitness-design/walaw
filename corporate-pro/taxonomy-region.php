@@ -28,6 +28,9 @@ function iwd_tax_region() {
 
 	//echo '<pre>' . print_r( $tax_list, true ) . '</pre>';
 
+	echo '<div>';
+	echo '<p>If you don\'t see your region below, reach out to us on our <a href="/contact">contact page</a>.';
+
 	echo '<div class="walaw-practice-grid">';
 	foreach ( $tax_list as $item ) {
 		echo '<div class="walaw-practice-grid__item">';
