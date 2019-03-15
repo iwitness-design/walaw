@@ -1,10 +1,22 @@
 <?php
 
-remove_action( 'genesis_after_header', 'corporate_hero_section_open', 20 );
-remove_action( 'genesis_after_header', 'corporate_hero_section_title', 24 );
-remove_action( 'genesis_after_header', 'corporate_hero_section_close', 28 );
+remove_action( 'genesis_before_content_sidebar_wrap', 'corporate_hero_section' );
 
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+function iwd_change_add_skyscraper() {
+
+	global $post;
+
+	$thumbnail = get_the_post_thumbnail_url( $post->ID );
+
+	if ( ! empty( $thumbnail ) ) {
+		//echo '<img src="' . $pods->display( 'banner-image', true ) . '">';
+
+		echo '<style type="text/css">';
+		echo 'body { background-image: url( ' . $thumbnail . '); background-position: top right; background-repeat: no-repeat; background-size: cover; }';
+		echo '</style>';
+	}
+}
+add_action( 'genesis_header', 'iwd_change_add_skyscraper' );
 
 function iwd_single_lawyer() {
 
@@ -17,6 +29,8 @@ function iwd_single_lawyer() {
 	?>
 		<div class="walaw-single-lawyer">
 			<div class="walaw-left">
+
+				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
 			</div>
 			<div class="walaw-right">

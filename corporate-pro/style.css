@@ -5000,21 +5000,39 @@ ul.testimonials-list h5 {
 	color: #fff;
 }
 
-.walaw-single-lawyer {
+/*.walaw-single-lawyer {
 	display: flex;
 	justify-content: space-around;
-}
+}*/
 
 .walaw-single-lawyer .walaw-left {
-	width: 60%;
+	width: 50%;
+	background: transparent;
 }
 
-.walaw-single-lawyer .walaw-right {
+.lawyer-template-default .content {
+	background: transparent;
+}
+
+.lawyer-template-default .content, .lawyer-template-default .content p {
+	/*color: #fff !important;*/
+}
+
+.lawyer-template-default .content .entry {
+	background: transparent;
+}
+
+/*.walaw-single-lawyer .walaw-right {
 	width: 30%;
+}*/
+
+.lawyer-template-default .site-header {
+	position: static;
 }
 
 @media (min-width: 896px) {
 	.lawyer-template-default .content {
 		width: 100%;
+		margin: 0 auto 0;
 	}
 }
