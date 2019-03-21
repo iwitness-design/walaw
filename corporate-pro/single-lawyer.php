@@ -20,7 +20,7 @@ function iwd_change_add_skyscraper() {
 		//echo '<img src="' . $pods->display( 'banner-image', true ) . '">';
 
 		echo '<style type="text/css">';
-		echo '@media (min-width: 768px) { body { background-image: url( ' . $skyscraper . '); background-position: center; background-repeat: no-repeat; background-size: cover; } }';
+		echo '@media (min-width: 769px) { body { background-image: url( ' . $skyscraper . '); background-position: center; background-repeat: no-repeat; background-size: cover; } }';
 		echo '</style>';
 	}
 }

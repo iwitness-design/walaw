@@ -5060,3 +5060,9 @@ ul.testimonials-list h5 {
 .walaw-lawyer-thumb .lawyer-name {
 	text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+	.walaw-practice-grid__item {
+		width: 100%;
+	}
+}

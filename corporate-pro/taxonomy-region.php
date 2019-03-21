@@ -39,7 +39,7 @@ function iwd_tax_region() {
 	foreach ( $tax_list as $item ) {
 		echo '<div class="walaw-practice-grid__item">';
 		//echo '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $item->term_id ) . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
-		echo '<h3 class="walaw-practice-grid__heading"><a href="/region/' . $region . '/' . $item->slug . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		echo '<h3 class="walaw-practice-grid__heading"><a href="/location/' . $region . '/' . $item->slug . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
 		echo '</div>';
 	}
 	echo '</div>';
