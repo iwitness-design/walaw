@@ -5065,4 +5065,11 @@ ul.testimonials-list h5 {
 	.walaw-practice-grid__item {
 		width: 100%;
 	}
+
+	.button, button, input[type='button'], input[type='reset'], input[type='submit'], .wp-block-button a {
+		max-width: 100%;
+		padding: 0 1.5rem;
+	}
 }
+
+

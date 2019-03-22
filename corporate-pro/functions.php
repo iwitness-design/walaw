@@ -316,7 +316,7 @@ function iwd_populate_referral_url( $form ){
 add_filter( 'gform_field_value_refurl', 'iwd_populate_referral_url');
 
 function iwd_tax_rewrite() {
-	add_rewrite_rule( '^location/([^/]*)/([^/]*)/?$', 'index.php?location=$matches[1]&practice=$matches[2]', 'top' );
+	add_rewrite_rule( '^locations/([^/]*)/([^/]*)/?$', 'index.php?location=$matches[1]&practice=$matches[2]', 'top' );
 
 	//add_rewrite_rule( '^c/(.+?)/(.+?)/?', 'index.php?region=$matches[1]&practice=$matches[2]', 'top' );
 }
