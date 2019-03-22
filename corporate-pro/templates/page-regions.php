@@ -14,6 +14,7 @@ function iwd_region_page() {
 		'hide_empty' => false,
 	) );
 
+	echo '<h1 style="text-align: center;">Choose your Location:</h1>';
 	echo '<div class="walaw-practice-grid walaw-practice-grid-3">';
 	foreach ( $terms as $term ) {
 			echo '<div class="walaw-practice-grid__item">';
