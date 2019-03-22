@@ -4968,6 +4968,7 @@ ul.testimonials-list h5 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .walaw-practice-grid__item {
