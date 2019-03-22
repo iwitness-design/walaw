@@ -4967,25 +4967,24 @@ ul.testimonials-list h5 {
 .walaw-practice-grid {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .walaw-practice-grid__item {
-	/*flex: 1 0 30%;*/
 	box-sizing: border-box;
-	border: 1px solid #000;
-	margin: 1%;
-	background: #000;
-	width: 30%;
+	margin: 10px 1%;
+	width: 18%;
 }
 
-.walaw-practice-grid__item:hover {
-	background: rgba( 0, 0, 0, .85 );
+.walaw-practice-grid-3 .walaw-practice-grid__item {
+	width: 30%;
 }
 
 .walaw-practice-grid__heading {
 	margin: 0;
 	text-align: center;
 	padding: 0;
+	font-size: 1em;
 }
 
 .walaw-practice-grid__link {
@@ -4995,9 +4994,12 @@ ul.testimonials-list h5 {
 	height: 100%;
 	display: block;
 	padding: 10px;
+	background: #000;
+	border-radius: 100px;
 }
 
 .walaw-practice-grid__link:hover {
+	background: rgba( 0, 0, 0, .85 );
 	color: #fff;
 }
 

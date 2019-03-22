@@ -30,16 +30,16 @@ function iwd_tax_practice() {
 		echo '</div>';
 	}
 
-	echo '<div class="walaw-client-request">';
-	echo do_shortcode( '[gravityform id="2"]' );
-	echo '</div>';
+//	echo '<div class="walaw-client-request">';
+//	echo do_shortcode( '[gravityform id="2"]' );
+//	echo '</div>';
 
-	echo '<div>';
-	echo '<h3>Lawyers</h3>';
+	echo '<div><br />';
 
 	$justin = get_post( 53 );
 
-	if ( $justin ) {
+	if ( $justin && in_array( $term->slug, [ 'real-estate', 'construction', 'business' ] ) ) {
+		echo '<h3>Lawyers</h3>';
 		echo '<div class="walaw-lawyer-thumb">';
 		echo '<p><a href="' . get_permalink( $justin->ID ) . '"><img src="' . get_the_post_thumbnail_url( $justin->ID ) . '"></a></p>';
 		echo '<p class="lawyer-name"><a href="' . get_permalink( $justin->ID ) . '">' . $justin->post_title . '</a></p>';
