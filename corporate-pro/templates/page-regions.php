@@ -12,9 +12,11 @@ function iwd_region_page() {
 	$terms = get_terms( array(
 		'taxonomy'   => 'region',
 		'hide_empty' => false,
+	    'parent' => 0,
+	    'exclude' => [ 46, 47, 48 ],
 	) );
 
-	echo '<h1 style="margin: 0 auto 1em;">Choose your Location</h1>';
+	echo '<h1 style="margin: 0 auto 1em;">Choose your County</h1>';
 	echo '<div class="walaw-practice-grid walaw-practice-grid-3">';
 	foreach ( $terms as $term ) {
 			echo '<div class="walaw-practice-grid__item">';
