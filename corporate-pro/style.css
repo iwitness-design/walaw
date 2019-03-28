@@ -5064,6 +5064,23 @@ ul.testimonials-list h5 {
 	text-align: center;
 }
 
+.walaw-practice-description {
+	width: 100%;
+}
+
+.walaw-practice-description span {
+    display: block;
+    margin: auto;
+    max-width: 780px;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+.walaw-practice-description span:first-child {
+    font-size: 2em;
+    font-weight: bold !important;
+}
+
 @media screen and (max-width: 768px) {
 	.walaw-practice-grid__item {
 		width: 100%;
