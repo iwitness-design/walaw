@@ -65,15 +65,20 @@ function iwd_single_lawyer() {
 					$practice_area = $pods->fetch( 'practice-areas' );
 
 					if ( ! empty( $practice_area['practice-areas'] ) ) {
+
+						echo '<!--TEST ARRAY OUTPUT-->' . "\n";
+						echo '<!--<pre>' . print_r( $practice_area['practice-areas'], true ) . '</pre>-->' . "\n";
+
+						foreach ( $practice_area['practice-areas'] as $practice ) {
 					?>
 					<div>
 						<strong>Practice Areas</strong>
 						<p>
-							<?php echo '<a href="' . get_category_link( $practice_area['practice-areas']['term_id'] ) .'">' . $practice_area['practice-areas']['name'] . '</a>'; ?>
+							<?php echo '<a href="' . get_category_link( $practice['term_id'] ) .'">' . $practice['name'] . '</a>'; ?>
 						</p>
 
 					</div>
-				<?php } } ?>
+				<?php } } } ?>
 
 				<?php if ( $pods->field( 'education' ) ) { ?>
 					<div>
