@@ -66,19 +66,20 @@ function iwd_single_lawyer() {
 
 					if ( ! empty( $practice_area['practice-areas'] ) ) {
 
-						echo '<!--TEST ARRAY OUTPUT-->' . "\n";
-						echo '<!--<pre>' . print_r( $practice_area['practice-areas'], true ) . '</pre>-->' . "\n";
 
-						foreach ( $practice_area['practice-areas'] as $practice ) {
 					?>
 					<div>
 						<strong>Practice Areas</strong>
 						<p>
-							<?php echo '<a href="' . get_category_link( $practice['term_id'] ) .'">' . $practice['name'] . '</a>'; ?>
+							<?php
+								foreach ( $practice_area['practice-areas'] as $practice ) {
+									echo '<a href="' . get_category_link( $practice['term_id'] ) . '">' . $practice['name'] . '</a><br>';
+								}
+							?>
 						</p>
 
 					</div>
-				<?php } } } ?>
+				<?php } } ?>
 
 				<?php if ( $pods->field( 'education' ) ) { ?>
 					<div>
