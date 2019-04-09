@@ -1552,7 +1552,10 @@ img.alignright,
 
 .custom-logo {
 	display: block;
+	width: auto;
+	max-height: 5rem;
 }
+
 
 .shrink .custom-logo {
 	display: block;
@@ -4576,6 +4579,9 @@ ul.testimonials-list h5 {
 	}
 	.no-js .site-header > .wrap {
 		padding: 0;
+	}
+	.custom-logo {
+		max-height: 8rem;
 	}
 	.site-description {
 		line-height: 1.382;
