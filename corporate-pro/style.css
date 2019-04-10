@@ -392,6 +392,7 @@ body {
 	font-size: 1.6rem;
 	font-weight: 400;
 	line-height: 1.618;
+	word-break: break-word;
 	-webkit-font-smoothing: antialiased;
 	   -moz-font-smoothing: grayscale;
 	-moz-osx-font-smoothing: grayscale;
@@ -1454,7 +1455,7 @@ img.alignright,
 /* ## Site Header
 --------------------------------------------- */
 .site-header {
-	position: absolute;
+	position: relative;
 	z-index: 100;
 	width: 100%;
 	border-bottom: 1px solid rgba(198, 202, 206, 0.3);
@@ -1960,7 +1961,7 @@ img.alignright,
 .nav-primary,
 .nav-secondary {
 	overflow: auto;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: -400px;
 	right: -40rem;
@@ -2090,6 +2091,11 @@ img.alignright,
 	box-shadow: none;
 }
 
+.menu-toggle.activated {
+	position: fixed;
+	right: 6vw;
+}
+
 .menu-toggle.activated,
 .shrink .menu-toggle {
 	color: #2a3139;
@@ -2133,13 +2139,17 @@ img.alignright,
 .menu-toggle span:before {
 	top: -5px;
 	top: -0.5rem;
+	transition: top 0.2s 0.2s, -webkit-transform 0.2s 0s;
 	transition: top 0.2s 0.2s, transform 0.2s 0s;
+	transition: top 0.2s 0.2s, transform 0.2s 0s, -webkit-transform 0.2s 0s;
 }
 
 .menu-toggle span:after {
 	bottom: -5px;
 	bottom: -0.5rem;
+	transition: bottom 0.2s 0.2s, -webkit-transform 0.2s 0s;
 	transition: bottom 0.2s 0.2s, transform 0.2s 0s;
+	transition: bottom 0.2s 0.2s, transform 0.2s 0s, -webkit-transform 0.2s 0s;
 }
 
 .menu-toggle.activated span {
@@ -2148,13 +2158,19 @@ img.alignright,
 
 .menu-toggle.activated span:before {
 	top: 0;
+	transition: top 0.2s 0s, -webkit-transform 0.2s 0.2s;
 	transition: top 0.2s 0s, transform 0.2s 0.2s;
+	transition: top 0.2s 0s, transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 
 .menu-toggle.activated span:after {
 	bottom: 0;
+	transition: bottom 0.2s 0s, -webkit-transform 0.2s 0.2s;
 	transition: bottom 0.2s 0s, transform 0.2s 0.2s;
+	transition: bottom 0.2s 0s, transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 
@@ -2194,6 +2210,7 @@ img.alignright,
 .sub-menu-toggle.activated:before {
 	margin: -2px 0 2px;
 	margin: -0.2rem 0 0.2rem;
+	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
@@ -2357,6 +2374,7 @@ img.alignright,
 	border-bottom: 1px solid #eceef1;
 	background-color: #ffffff;
 	text-align: center;
+	-webkit-transform: translate(-50%);
 	transform: translate(-50%);
 }
 
@@ -5088,6 +5106,7 @@ ul.testimonials-list h5 {
 }
 
 @media screen and (max-width: 768px) {
+	.walaw-practice-grid-3 .walaw-practice-grid__item,
 	.walaw-practice-grid__item {
 		width: 100%;
 	}
