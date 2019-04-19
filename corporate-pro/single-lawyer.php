@@ -3,28 +3,23 @@
 remove_action( 'genesis_before_content_sidebar_wrap', 'corporate_hero_section' );
 
 function iwd_change_add_skyscraper() {
-
-	global $post;
-
-	//$thumbnail = get_the_post_thumbnail_url( $post->ID );
-
 	$params = array(
 		'limit'   => -1  // Return all rows
 	);
 
 	$pods = pods( 'lawyer', $params );
 
-	$skyscraper = $pods->display( 'skyscraper-image' );
+	if ( ! empty( $skyscraper ) ) ?>
+		<div class="lawyer-bg" id="lawyer-bg">
 
-	if ( ! empty( $skyscraper ) ) {
-		//echo '<img src="' . $pods->display( 'banner-image', true ) . '">';
+		</div>
 
-		echo '<style type="text/css">';
-		echo '@media (min-width: 769px) { body { background-image: url( ' . $skyscraper . '); background-position: center; background-repeat: no-repeat; background-size: cover; } }';
-		echo '</style>';
-	}
+		<style type="text/css">
+			@media (min-width: 769px) { #lawyer-bg { background: url( <?php echo $pods->display( 'skyscraper-image', true ); ?> ) center center no-repeat; background-size: cover; } }
+		</style>
+	<?php
 }
-add_action( 'genesis_header', 'iwd_change_add_skyscraper' );
+add_action( 'wp_footer', 'iwd_change_add_skyscraper' );
 
 function iwd_single_lawyer() {
 

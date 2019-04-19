@@ -5105,6 +5105,27 @@ ul.testimonials-list h5 {
     font-weight: bold !important;
 }
 
+@media screen and (min-width: 767px) {
+	.single-lawyer .site-container {
+		position: relative;
+		z-index: 2;
+	}
+
+	.single-lawyer .site-footer {
+		background: rgba(255,255,255,.75)
+	}
+
+	.single-lawyer .lawyer-bg {
+		z-index: 1;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #a6a8ab;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.walaw-practice-grid-3 .walaw-practice-grid__item,
 	.walaw-practice-grid__item {
@@ -5114,6 +5135,10 @@ ul.testimonials-list h5 {
 	.button, button, input[type='button'], input[type='reset'], input[type='submit'], .wp-block-button a {
 		max-width: 100%;
 		padding: 0 1.5rem;
+	}
+
+	.lawyer-bg {
+		display: none;
 	}
 }
 
