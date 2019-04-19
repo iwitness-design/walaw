@@ -5111,7 +5111,8 @@ ul.testimonials-list h5 {
 		z-index: 2;
 	}
 
-	.single-lawyer .site-footer {
+	.single-lawyer .site-footer,
+	.single-lawyer .site-header {
 		background: rgba(255,255,255,.75)
 	}
 
