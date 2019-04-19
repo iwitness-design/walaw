@@ -35,8 +35,6 @@ function iwd_single_lawyer() {
 
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
-			</div>
-			<div class="walaw-right">
 
 				<?php if ( $pods->field( 'contact-email' ) || $pods->field( 'contact-phone' ) ) { ?>
 					<div>
