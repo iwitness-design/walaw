@@ -5092,7 +5092,7 @@ ul.testimonials-list h5 {
 	width: 100%;
 }
 
-.walaw-practice-description span {
+.walaw-practice-description > * {
     display: block;
     margin: auto;
     max-width: 780px;
