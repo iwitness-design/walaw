@@ -38,7 +38,7 @@ function iwd_tax_practice() {
 
 	$justin = get_post( 53 );
 
-	if ( $justin && in_array( $term->slug, [ 'real-estate', 'construction', 'business', 'contracts' ] ) ) {
+	if ( 0 && $justin && in_array( $term->slug, [ 'real-estate', 'construction', 'business', 'contracts' ] ) ) {
 		echo '<h3>Lawyers</h3>';
 		echo '<div class="walaw-lawyer-thumb">';
 		echo '<p><a href="' . get_permalink( $justin->ID ) . '"><img src="' . get_the_post_thumbnail_url( $justin->ID ) . '"></a></p>';
