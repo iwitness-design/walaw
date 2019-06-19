@@ -281,14 +281,14 @@ require_once CHILD_THEME_DIR . '/includes/plugins.php';
 
 
 // CUSTOM
-function iwd_practice_shortcode() {
+function iwd_practice_shortcode( $args = [] ) {
 
-	$args = array(
+	$args = wp_parse_args( $args, array(
 		'echo' => false,
 		'taxonomy' => 'practice',
 		'hide_empty' => false,
 		'location' => false,
-	);
+	) );
 
 	$tax_list = get_categories( $args );
 
