@@ -287,6 +287,7 @@ function iwd_practice_shortcode() {
 		'echo' => false,
 		'taxonomy' => 'practice',
 		'hide_empty' => false,
+		'location' => false,
 	);
 
 	$tax_list = get_categories( $args );
@@ -296,7 +297,11 @@ function iwd_practice_shortcode() {
 	$html .= '<div class="walaw-practice-grid">';
 	foreach ( $tax_list as $item ) {
 		$html .= '<div class="walaw-practice-grid__item">';
-		$html .= '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $item->term_id ) . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		if ( $args['location'] ) {
+			$html .= '<h3 class="walaw-practice-grid__heading"><a href="/locations/' . esc_html( $args['location'] ) . '/' . $item->slug . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		} else {
+			$html .= '<h3 class="walaw-practice-grid__heading"><a href="' . get_category_link( $item->term_id ) . '" class="walaw-practice-grid__link">' . $item->name . '</a></h3>';
+		}
 		$html .= '</div>';
 	}
 
